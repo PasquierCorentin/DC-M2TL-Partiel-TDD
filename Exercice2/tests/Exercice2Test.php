@@ -15,4 +15,9 @@ final class Exercice2Test extends TestCase
         $this->assertEquals('IX', Exercice2::decimalToRoman(9));
     }
 
+    public function testRomanComplexes() : void
+    {
+        $this->assertEquals('XXIV', Exercice2::decimalToRoman(24));
+    }
+
 }

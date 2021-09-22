@@ -7,53 +7,40 @@ class Exercice2
 
         $resultat = '';
 
-        if($n === 1){
-            $resultat .= 'I';
-            return $resultat;
-        }
+        $basesDec = [10, 9, 5, 4, 1];
+        $basesRom = ['X', 'IX', 'V', 'IV', 'I'];
 
-        if($n === 2){
-            return 'II';
-        }
+        $decimBigBase = $basesDec[0];
+        $romanBigBase = $basesRom[0];
 
-        if($n === 3){
-            return 'III';
-        }
-
-        if($n === 4){
-            return 'IV';
-        }
-
-        if($n === 5){
-            return 'V';
-        }
-
-        if($n>5){
-            $resultat .= 'V';
-            $n -= 5;
-
-            if($n === 1){
-                $resultat .= 'I';
-                return $resultat;
-            }
-    
-            if($n === 2){
-                $resultat .= 'II';
-                return $resultat;
-            }
-    
-            if($n === 3){
-                $resultat .= 'III';
-                return $resultat;
-            }
-    
-            if($n === 4){
-                $resultat .= 'IV';
-                return $resultat;
+        while ($n != 0){
+                
+            for($i = 0; $n <= $basesDec[$i]; $i++){
+                $decimBigBase = $basesDec[$i];
+                $romanBigBase = $basesRom[$i];
             }
 
-            return $resultat;
+            if($n===$romanBigBase){
+                $resultat .= $romanBigBase;
+                return $resultat;
+            } else {
+                $quotient = intdiv($n, $decimBigBase);
+            
+                for ($i = 0; $i < $quotient; $i++ ){
+                    $resultat .= $romanBigBase;
+                }
+
+                $reste = $n % $decimBigBase;
+
+                $n = $reste;
+            }
+                
+            
+
         }
+
+        return $resultat;
+
     }
 }
 
