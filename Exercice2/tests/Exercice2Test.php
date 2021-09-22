@@ -11,6 +11,8 @@ final class Exercice2Test extends TestCase
         $this->assertEquals('III', Exercice2::decimalToRoman(3));
         $this->assertEquals('IV', Exercice2::decimalToRoman(4));
         $this->assertEquals('V', Exercice2::decimalToRoman(5));
+        $this->assertEquals('VII', Exercice2::decimalToRoman(7));
+        $this->assertEquals('IX', Exercice2::decimalToRoman(9));
     }
 
 }
